@@ -39,13 +39,12 @@ export default function Themes(){
     const {theme, setTheme} = useThemeStore();
 
     return (
-        <div className="container mb-20 mx-auto px-4 pt-20 max-w-5xl">
-            <div className="space-y-6 bg-base-300 p-6 rounded-2xl">
-                <div className="flex flex-col gap-1">
-                    <h2 className="text-lg font-semibold">Themes</h2>
+        <div className="container mb-20 mx-auto px-4 pt-15 max-w-5xl">
+                <div className="flex flex-col gap-1 p-3">
+                    <h2 className="text-3xl text-secondary font-bold">Themes</h2>
                     <p className="text-sm text-base-content/70">Select amazing themes from below</p>
                 </div>
-
+            <div className="space-y-6 bg-base-300 p-6 rounded-2xl">
                 <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
                     {THEMES.map((t) => (
                         <button
