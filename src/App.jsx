@@ -7,8 +7,11 @@ import About from './pages/About'
 import Portfolio from './pages/Portfolio'
 import ProjectDetails from './pages/ProjectDetails'
 import Contact from './pages/Contact'
+import Themes from './pages/Themes'
+import { useThemeStore } from './stores/useThemeStore'
 
 function App() {
+  const {theme} = useThemeStore();
   const router = createBrowserRouter([
     {
       path: '/',
@@ -18,13 +21,16 @@ function App() {
         {path: 'about', element: <About/>},
         {path: 'portfolio', element: <Portfolio/>},
         {path: 'portfolio/:slug', element: <ProjectDetails/>},
-        {path: 'contact', element: <Contact/> }
+        {path: 'contact', element: <Contact/> },
+        {path: 'themes', element: <Themes/>}
       ]
     }
   ])
   
   return (
-    <RouterProvider router={router} />
+    <div data-theme={theme}>
+      <RouterProvider router={router} />
+    </div>
   )
 }
 
