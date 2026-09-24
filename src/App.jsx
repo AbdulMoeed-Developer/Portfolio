@@ -9,6 +9,7 @@ import ProjectDetails from './pages/ProjectDetails'
 import Contact from './pages/Contact'
 import Themes from './pages/Themes'
 import { useThemeStore } from './stores/useThemeStore'
+import Error from './pages/Error'
 
 function App() {
   const {theme} = useThemeStore();
@@ -16,6 +17,7 @@ function App() {
     {
       path: '/',
       element: <RootLayout/>,
+      errorElement: <Error/>,
       children: [
         {index: true, element: <Home/>},
         {path: 'about', element: <About/>},
