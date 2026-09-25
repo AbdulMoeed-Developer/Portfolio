@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import './App.css'
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
 import Home from './pages/Home'
 import RootLayout from './components/UI/RootLayout'
 import About from './pages/About'
@@ -12,23 +13,27 @@ import { useThemeStore } from './stores/useThemeStore'
 import Error from './pages/Error'
 
 function App() {
-  const {theme} = useThemeStore();
+  const { theme } = useThemeStore()
+
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <RootLayout/>,
-      errorElement: <Error/>,
+      element: <RootLayout />,
+      errorElement: <Error />,
       children: [
-        {index: true, element: <Home/>},
-        {path: 'about', element: <About/>},
-        {path: 'portfolio', element: <Portfolio/>},
-        {path: 'portfolio/:slug', element: <ProjectDetails/>},
-        {path: 'contact', element: <Contact/> },
-        {path: 'themes', element: <Themes/>}
+        { index: true, element: <Home /> },
+        { path: 'about', element: <About /> },
+        { path: 'portfolio', element: <Portfolio /> },
+        { path: 'portfolio/:slug', element: <ProjectDetails /> },
+        { path: 'contact', element: <Contact /> },
+        { path: 'themes', element: <Themes /> },
+
+        // Handles pages that don't exist
+        { path: '*', element: <Error /> }
       ]
     }
   ])
-  
+
   return (
     <div data-theme={theme}>
       <RouterProvider router={router} />
