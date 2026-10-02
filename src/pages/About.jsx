@@ -89,7 +89,7 @@ export default function About(){
                 </div>
 
                 {/* Web Development Internship */}
-                <div className="border-l-2 border-primary pl-6 pb-15 rounded-r-2xl pt-6 pr-5">
+                {/* <div className="border-l-2 border-primary pl-6 pb-15 rounded-r-2xl pt-6 pr-5">
                     <p className="text-sm text-base-content/50">
                         2026 — Present
                     </p>
@@ -110,7 +110,7 @@ export default function About(){
                         Working on real-world web development projects,
                         improving frontend and backend development skills.
                     </p>
-                </div>
+                </div> */}
 
 
                 {/* BS Computer Science */}

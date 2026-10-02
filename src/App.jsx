@@ -2,15 +2,15 @@ import './App.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
-import Home from './pages/Home'
-import RootLayout from './components/UI/RootLayout'
-import About from './pages/About'
-import Portfolio from './pages/Portfolio'
-import ProjectDetails from './pages/ProjectDetails'
-import Contact from './pages/Contact'
-import Themes from './pages/Themes'
-import { useThemeStore } from './stores/useThemeStore'
-import Error from './pages/Error'
+import Home from './pages/Home.jsx'
+import RootLayout from './components/UI/RootLayout.jsx'
+import About from './pages/About.jsx'
+import Portfolio from './pages/Portfolio.jsx'
+import ProjectDetails from './pages/ProjectDetails.jsx'
+import Contact from './pages/Contact.jsx'
+import Themes from './pages/Themes.jsx'
+import { useThemeStore } from './stores/useThemeStore.js'
+import Error from './pages/Error.jsx'
 
 function App() {
   const { theme } = useThemeStore()
@@ -27,11 +27,9 @@ function App() {
         { path: 'portfolio/:slug', element: <ProjectDetails /> },
         { path: 'contact', element: <Contact /> },
         { path: 'themes', element: <Themes /> },
-
-        // Handles pages that don't exist
-        { path: '*', element: <Error /> }
       ]
-    }
+    },
+    { path: '*', element: <Error /> }
   ])
 
   return (
